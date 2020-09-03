@@ -1,3 +1,4 @@
+//dekuBot
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 i = 0;
@@ -14,6 +15,12 @@ bot.on('ready', () => {
 bot.on('message', msg => {
     let args = msg.content.substring(PREFIX.length).split(" ");
     switch (args[0]) {
+        case 'help':
+            msg.reply('!hello - Say hello!' +
+                        '\n!ping - Get a test message.' +
+                        '\n!smashme - SMMAAAAAAASH!' +
+                        '\n!dice - Roll a die! Enter a number after the command to set the highest number the die will roll.');
+            break;
         case 'hello':
             msg.reply("https://ih1.redbubble.net/image.601904638.1717/raf,750x1000,075,t,FFFFFF:97ab1c12de.u2.jpg");
             break;
