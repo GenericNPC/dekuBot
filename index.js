@@ -4,10 +4,11 @@ const bot = new Discord.Client();
 i = 0;
 
 const token = "";
-const PREFIX = '!';
+const PREFIX = 'd!';
 
 bot.on('ready', () => {
     console.log('This bot is online!');
+    bot.user.setActivity('Dreaming of being a hero!\nType \"d!help\" for commands!');
 });
 
 bot.on('message', msg => {
@@ -59,6 +60,10 @@ bot.on('message', msg => {
             } else {
                 msg.reply(Math.floor((Math.random() * number) + 1));
             }
+            break;
+        case 'git':
+            msg.reply('https://github.com/GenericNPC/dekuBot');
+            break;
     }
 });
 
