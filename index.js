@@ -12,6 +12,7 @@ bot.on('ready', () => {
 });
 
 bot.on('message', msg => {
+    bot.user.setActivity('Dreaming of being a hero!\nType \"d!help\" for commands!');
     if (msg.content[0] == 'd' && msg.content[1] == '!') {
         let args = msg.content.substring(PREFIX.length).split(" ");
         switch (args[0]) {
