@@ -8,19 +8,20 @@ const PREFIX = 'd!';
 
 bot.on('ready', () => {
     console.log('This bot is online!');
-    bot.user.setActivity('Dreaming of being a hero!\nType \"d!help\" for commands!');
+    setInterval(() => {
+        bot.user.setActivity('Dreaming of being a hero!\nType \"d!help\" for commands!');
+    }, 5000000);
 });
 
 bot.on('message', msg => {
-    bot.user.setActivity('Dreaming of being a hero!\nType \"d!help\" for commands!');
     if (msg.content[0] == 'd' && msg.content[1] == '!') {
         let args = msg.content.substring(PREFIX.length).split(" ");
         switch (args[0]) {
             case 'help':
-                msg.reply('!hello - Say hello!' +
-                    '\n!ping - Get a test message.' +
-                    '\n!smashme - SMMAAAAAAASH!' +
-                    '\n!dice - Roll a die! Enter a number after the command to set the highest number the die will roll.');
+                msg.reply('d!hello - Say hello!' +
+                    '\nd!ping - Get a test message.' +
+                    '\nd!smashme - SMMAAAAAAASH!' +
+                    '\nd!dice - Roll a die! Enter a number after the command to set the highest number the die will roll.');
                 break;
             case 'hello':
                 msg.reply("https://ih1.redbubble.net/image.601904638.1717/raf,750x1000,075,t,FFFFFF:97ab1c12de.u2.jpg");
