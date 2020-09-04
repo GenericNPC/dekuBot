@@ -8,6 +8,7 @@ const PREFIX = 'd!';
 
 bot.on('ready', () => {
     console.log('This bot is online!');
+    bot.user.setActivity('Dreaming of being a hero!\nType \"d!help\" for commands!');
     setInterval(() => {
         bot.user.setActivity('Dreaming of being a hero!\nType \"d!help\" for commands!');
     }, 5000000);
